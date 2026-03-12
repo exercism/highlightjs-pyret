@@ -1,1 +1,16 @@
-<span class="hljs-number">5</span> <span class="hljs-number">6e3</span> <span class="hljs-number">0</span> <span class="hljs-number">3.2</span> <span class="hljs-number">3/4</span> <span class="hljs-number">¯2/¯4</span> <span class="hljs-number">¯1.1</span> <span class="hljs-number">η</span> <span class="hljs-number">π</span> <span class="hljs-number">τ</span> <span class="hljs-number">∞</span>
+n01 <span class="hljs-operator">=</span> <span class="hljs-number">123</span>
+n02 <span class="hljs-operator">=</span> <span class="hljs-number">-123</span>
+n03 <span class="hljs-operator">=</span> <span class="hljs-number">12.34</span>
+n04 <span class="hljs-operator">=</span> <span class="hljs-number">-12.34</span>
+n05 <span class="hljs-operator">=</span> <span class="hljs-number">1/2</span>
+n06 <span class="hljs-operator">=</span> <span class="hljs-number">-1/2</span>
+n07 <span class="hljs-operator">=</span> <span class="hljs-number">~123</span>
+n08 <span class="hljs-operator">=</span> <span class="hljs-number">~-123</span>
+n09 <span class="hljs-operator">=</span> <span class="hljs-number">~12.34</span>
+n10 <span class="hljs-operator">=</span> <span class="hljs-number">~-12.34</span>
+n11 <span class="hljs-operator">=</span> <span class="hljs-number">~1/2</span>
+n12 <span class="hljs-operator">=</span> <span class="hljs-number">~-1/2</span>
+n13 <span class="hljs-operator">=</span> <span class="hljs-number">1.2e3</span>
+n14 <span class="hljs-operator">=</span> <span class="hljs-number">1.2e-3</span>
+n15 <span class="hljs-operator">=</span> <span class="hljs-number">-1.2e+3</span>
+n16 <span class="hljs-operator">=</span> <span class="hljs-number">~1.2e3</span>

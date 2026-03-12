@@ -1,0 +1,10 @@
+<span class="hljs-keyword">include</span> string-dict
+
+l1 <span class="hljs-operator">=</span> <span class="hljs-literal">empty</span>
+l2 <span class="hljs-operator">=</span> [<span class="hljs-built_in">list</span>: <span class="hljs-number">1</span>, <span class="hljs-number">2</span>, <span class="hljs-number">3</span>]
+l3 <span class="hljs-operator">=</span> [<span class="hljs-built_in">list</span>: ]
+l4 <span class="hljs-operator">=</span> link(<span class="hljs-number">1</span>, link(<span class="hljs-number">2</span>, <span class="hljs-literal">empty</span>))
+l5 <span class="hljs-operator">=</span> l2.push(<span class="hljs-number">4</span>)
+s1 <span class="hljs-operator">=</span> [<span class="hljs-built_in">set</span>: <span class="hljs-number">1</span>, <span class="hljs-number">2</span>, <span class="hljs-number">3</span>]
+d1 <span class="hljs-operator">=</span> [<span class="hljs-built_in">string-dict</span>: <span class="hljs-string">&quot;a&quot;</span>, <span class="hljs-number">1</span>]
+d2 <span class="hljs-operator">=</span> [<span class="hljs-built_in">mutable-string-dict</span>: <span class="hljs-string">&quot;a&quot;</span>, <span class="hljs-number">1</span>]

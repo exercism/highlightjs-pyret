@@ -1,0 +1,13 @@
+<span class="hljs-keyword">include</span> string-dict
+
+d1 <span class="hljs-operator">=</span> [<span class="hljs-built_in">string-dict</span>: <span class="hljs-string">&quot;a&quot;</span>, <span class="hljs-number">1</span>, <span class="hljs-string">&quot;b&quot;</span>, <span class="hljs-number">2</span>]
+d2 <span class="hljs-operator">=</span> [<span class="hljs-built_in">mutable-string-dict</span>: <span class="hljs-string">&quot;a&quot;</span>, <span class="hljs-number">1</span>, <span class="hljs-string">&quot;b&quot;</span>, <span class="hljs-number">2</span>]
+
+d1.get(<span class="hljs-string">&quot;a&quot;</span>)
+d1.get-now(<span class="hljs-string">&quot;a&quot;</span>)
+
+d1.set(<span class="hljs-string">&quot;c&quot;</span>, <span class="hljs-number">3</span>)
+d2.set-now(<span class="hljs-string">&quot;c&quot;</span>, <span class="hljs-number">3</span>)
+
+d1.keys()
+d1.has-key(<span class="hljs-string">&quot;a&quot;</span>)

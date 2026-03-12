@@ -1,0 +1,11 @@
+1 + 2
+a - 1
+foo / 2
+foo * 2
+foo!
+is%(equal)
+is-not%(equal)
+b1 is-not%(equal-always) b2
+b1 is%(equal-now) b2
+b2!{x : 2}
+num-acos(-1) is%(roughly-equal) ~3.14159

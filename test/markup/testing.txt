@@ -1,0 +1,11 @@
+check "test suite":
+  1 + 1 is 2
+  2 * 2 is== 4
+  3 / 2 is=~ 1.5
+  
+  fun throw-err(): raise("err") end
+  throw-err() raises "err"
+  
+  [list: 1, 2] satisfies lam(l): l.length() == 2 end
+  [list: 1] violates lam(l): l.length() == 2 end
+end

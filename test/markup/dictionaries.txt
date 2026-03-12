@@ -1,0 +1,13 @@
+include string-dict
+
+d1 = [string-dict: "a", 1, "b", 2]
+d2 = [mutable-string-dict: "a", 1, "b", 2]
+
+d1.get("a")
+d1.get-now("a")
+
+d1.set("c", 3)
+d2.set-now("c", 3)
+
+d1.keys()
+d1.has-key("a")

@@ -1,0 +1,11 @@
+<span class="hljs-comment"># This is a single line comment</span>
+a <span class="hljs-operator">=</span> <span class="hljs-number">1</span> <span class="hljs-comment"># Inline single line comment</span>
+
+<span class="hljs-comment">#| 
+  This is a block comment
+  that spans multiple lines
+|#</span>
+
+<span class="hljs-comment">#|
+  Block comments <span class="hljs-comment">#| can also be nested |#</span> inside each other.
+|#</span>

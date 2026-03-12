@@ -1,30 +1,88 @@
-# Numbers
-5 6e3 0 3.2 3/4 ¯2/¯4 ¯1.1 η π τ ∞
+use context essentials2020
 
-# Characters
-@a @Z @  @\n @\s @\xae @\x1F @\u2665 @\u{1f600}
+provide-types *
+provide: abbreviate, proteins end
+import lists as L
+include string-dict
 
-# Arrays
-[] [1 2 3] 1_2_3 [1_2 3_4]
-{} {1 {2 3}}
+data LinkedList:
+  | empty-list with:
+    method foldl(_, _, acc): acc end,
+  | linked-list(head, tail) with:
+    method foldl(self, f, acc):
+      self.tail.foldl(f, f(self.head, acc))
+    end,
+    method get-head(self):
+      self.head
+    end,
+    method get-tail(self):
+      self.tail
+    end
+sharing:
+  method length(self):
+    cases(LinkedList) self:
+      | empty-list => 0
+      | linked-list(_, r) => 
+        r.foldl(lam(elt, acc): acc + 1 end, 1)
+    end
+  end,
+  method push(self, val): linked-list(val, self) end,
+  method reversed(self):
+    self.foldl(
+      lam(elt, acc): linked-list(elt, acc) end,
+      empty-list)
+  end,
+  method to-list(self):
+    self.foldl(
+      lam(elt, acc): acc.push(elt) end,
+      [list: ])
+  end
+end
 
-# Strings
-"Hello, world!"
-"Hello,\sworld!"
-"Hello, \"world\"!"
+codon_mappings = [mutable-string-dict:
+  "AUG", "Methionine",
+  "UUU", "Phenylalanine",
+  "UGA", "STOP"
+]
 
-$"Hello _ !" "World"
-$ Hello _ !
-$$ Hello _ !
+fun proteins(strand):
+  proteins-recursive(string-explode(strand), [list: ])
+end
 
-# Identifiers
-Name Age__1 X y
+fun proteins-recursive(current, acc):
+  ask:
+    | current.length() == 0 then: acc
+    | current.length() < 3 then: raise("Invalid codon")
+    | otherwise:
+      block:
+        codon = current.take(3).join-str("")
+        protein = translate-codon(codon)
+        ask:
+          | protein == "STOP" then: acc
+          | otherwise:
+            rest = split-at(3, current).suffix
+            L.append([list: protein], proteins-recursive(rest, acc))
+        end
+      end
+  end
+end
 
-# Functions
-Cube ← ××..
-Cube = (××..)
-TimesThree ← |1.1 ×3
-TimesThree ← |1 ×3
+fun translate-codon(codon):
+  cases(Option) codon_mappings.get-now(codon):
+    | some(a) => a
+    | none => raise("Invalid codon")
+  end
+end
 
-# Glyphs
-◠ ⌵ + ⌝ ’ ⍤ ∠ ˜ ◡ ⋯ ∩ □ ⊓ ⊸ ⍩ ⌈ ⑄ ⊛ ℂ ◇ ⊟ ◴ ∂ ♭ ⊙ ÷ ⍢ ↘ . ∵ = ⍖ ⬚ ⌕ ⊢ ¤ : ⌊ ∧ ⊃ ⋅ ≥ &gt; ⊕ ∘ ⊗ ∫ ⍚ ⊂ ▽ ⊣ ⧻ ≤ &lt; ₙ ⦷ ≍ ↥ ∊ ∈ ↧ ◿ × ¯ ¬ ≠ ⌅ ⤚ ⟜ ⤸  ⋕ ⊜ ⊡ ◌ ⁿ ⚂ ⇡ / ⍥ ☇ ↯ ⇌ ⍏ ↻ ⁅ ≡ \\ ⊏ △ ± ∿ ⍆ √ ? - ⨬ ⊞ ↙ ⸮ ⍉ ◹ ⍣ ⧅ ° ⍜ ◰ ⊚ ◫ ⤙
+#|
+  This is a block comment
+  with some numbers ~123.45e-6
+|#
+check "test strings and numbers":
+  result = empty-list
+    ^ linked-list(3, _)
+    ^ linked-list(2, _)
+    ^ linked-list(1, _)
+  result.length() is 3
+  result.length() is-not== 4
+end

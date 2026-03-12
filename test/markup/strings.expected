@@ -1,7 +1,10 @@
-<span class="hljs-string">&quot;Hello, world!&quot;</span>
-<span class="hljs-string">&quot;Hello,\sworld!&quot;</span>
-<span class="hljs-string">&quot;Hello, \&quot;world\&quot;!&quot;</span>
-
-<span class="hljs-string">$&quot;Hello <span class="hljs-subst">_</span> !&quot;</span> <span class="hljs-string">&quot;World&quot;</span>
-<span class="hljs-string">$ Hello _ !</span>
-<span class="hljs-string">$$ Hello <span class="hljs-subst">_</span> !</span>
+s1 <span class="hljs-operator">=</span> <span class="hljs-string">&quot;This is a double quoted string&quot;</span>
+s2 <span class="hljs-operator">=</span> <span class="hljs-string">&#x27;This is a single quoted string&#x27;</span>
+s3 <span class="hljs-operator">=</span> <span class="hljs-string">```
+This is a
+multiline string
+```</span>
+s4 <span class="hljs-operator">=</span> <span class="hljs-string">&quot;String with \&quot; escape&quot;</span>
+s5 <span class="hljs-operator">=</span> <span class="hljs-string">&#x27;String with \&#x27; escape&#x27;</span>
+s6 <span class="hljs-operator">=</span> <span class="hljs-string">```String with ```</span> embedded in text<span class="hljs-string">```
+</span>

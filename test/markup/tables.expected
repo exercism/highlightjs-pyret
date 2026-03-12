@@ -1,0 +1,15 @@
+<span class="hljs-keyword">include</span> tables
+
+my-table <span class="hljs-operator">=</span> <span class="hljs-keyword">table</span>: name <span class="hljs-operator">::</span> String, age <span class="hljs-operator">::</span> Number, active <span class="hljs-operator">::</span> Boolean
+  <span class="hljs-keyword">row</span>: <span class="hljs-string">&quot;Alice&quot;</span>, <span class="hljs-number">20</span>, <span class="hljs-literal">true</span>
+  <span class="hljs-keyword">row</span>: <span class="hljs-string">&quot;Bob&quot;</span>, <span class="hljs-number">30</span>, <span class="hljs-literal">false</span>
+<span class="hljs-keyword">end</span>
+
+loaded <span class="hljs-operator">=</span> <span class="hljs-keyword">load-table</span>: name, age
+  <span class="hljs-keyword">source</span>: my-table
+  <span class="hljs-keyword">sanitize</span> name: string-toupper
+<span class="hljs-keyword">end</span>
+
+t <span class="hljs-operator">=</span> my-table.build-column(<span class="hljs-string">&quot;score&quot;</span>, <span class="hljs-function"><span class="hljs-keyword">lam</span><span class="hljs-params">(r)</span></span>: r[<span class="hljs-string">&quot;age&quot;</span>] <span class="hljs-operator">*</span> <span class="hljs-number">2</span> <span class="hljs-keyword">end</span>)
+filtered <span class="hljs-operator">=</span> t.filter(<span class="hljs-function"><span class="hljs-keyword">lam</span><span class="hljs-params">(r)</span></span>: r[<span class="hljs-string">&quot;active&quot;</span>] <span class="hljs-operator">==</span> <span class="hljs-literal">true</span> <span class="hljs-keyword">end</span>)
+sorted <span class="hljs-operator">=</span> filtered.order-by(<span class="hljs-string">&quot;age&quot;</span>, <span class="hljs-literal">true</span>)

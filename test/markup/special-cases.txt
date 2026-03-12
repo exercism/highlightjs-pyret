@@ -1,0 +1,7 @@
+# Special case where operators must be space-separated
+# Without spaces, hyphens form an identifier instead.
+valid-identifier = 1 - 2
+another-identifier = valid-identifier
+
+a-b = 3
+c = a-b - 1

@@ -1,7 +1,9 @@
-"Hello, world!"
-"Hello,\sworld!"
-"Hello, \"world\"!"
-
-$"Hello _ !" "World"
-$ Hello _ !
-$$ Hello _ !
+s1 = "This is a double quoted string"
+s2 = 'This is a single quoted string'
+s3 = ```
+This is a
+multiline string
+```
+s4 = "String with \" escape"
+s5 = 'String with \' escape'
+s6 = ```String with ``` embedded in text```

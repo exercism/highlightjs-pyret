@@ -1,0 +1,11 @@
+<span class="hljs-number">1</span> <span class="hljs-operator">+</span> <span class="hljs-number">2</span>
+a <span class="hljs-operator">-</span> <span class="hljs-number">1</span>
+foo <span class="hljs-operator">/</span> <span class="hljs-number">2</span>
+foo <span class="hljs-operator">*</span> <span class="hljs-number">2</span>
+foo<span class="hljs-operator">!</span>
+<span class="hljs-keyword">is%</span>(equal)
+<span class="hljs-keyword">is-not%</span>(equal)
+b1 <span class="hljs-keyword">is-not%</span>(equal-always) b2
+b1 <span class="hljs-keyword">is%</span>(equal-now) b2
+b2<span class="hljs-operator">!</span>{x : <span class="hljs-number">2</span>}
+num-acos(<span class="hljs-number">-1</span>) <span class="hljs-keyword">is%</span>(roughly-equal) <span class="hljs-number">~3.14159</span>

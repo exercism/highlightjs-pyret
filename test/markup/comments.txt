@@ -1,0 +1,11 @@
+# This is a single line comment
+a = 1 # Inline single line comment
+
+#| 
+  This is a block comment
+  that spans multiple lines
+|#
+
+#|
+  Block comments #| can also be nested |# inside each other.
+|#

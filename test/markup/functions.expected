@@ -1,4 +1,30 @@
-<span class="hljs-title function_ invoke__">Cube</span> <span class="hljs-built_in">←</span> <span class="hljs-built_in">×</span><span class="hljs-built_in">×</span><span class="hljs-built_in">.</span><span class="hljs-built_in">.</span>
-<span class="hljs-title function_ invoke__">Cube</span> <span class="hljs-built_in">=</span> <span class="hljs-punctuation">(</span><span class="hljs-built_in">×</span><span class="hljs-built_in">×</span><span class="hljs-built_in">.</span><span class="hljs-built_in">.</span><span class="hljs-punctuation">)</span>
-<span class="hljs-title function_ invoke__">TimesThree</span> <span class="hljs-built_in">←</span> <span class="hljs-meta">|1.1</span> <span class="hljs-built_in">×</span><span class="hljs-number">3</span>
-<span class="hljs-title function_ invoke__">TimesThree</span> <span class="hljs-built_in">←</span> <span class="hljs-meta">|1</span> <span class="hljs-built_in">×</span><span class="hljs-number">3</span>
+<span class="hljs-function"><span class="hljs-keyword">fun</span> <span class="hljs-title">fact</span><span class="hljs-params">(n)</span></span>:
+  <span class="hljs-keyword">if</span> n <span class="hljs-operator">==</span> <span class="hljs-number">0</span>:
+    <span class="hljs-number">1</span>
+  <span class="hljs-keyword">else</span>:
+    n <span class="hljs-operator">*</span> fact(n <span class="hljs-operator">-</span> <span class="hljs-number">1</span>)
+  <span class="hljs-keyword">end</span>
+<span class="hljs-keyword">where</span>:
+  fact(<span class="hljs-number">0</span>) <span class="hljs-keyword">is</span> <span class="hljs-number">1</span>
+  fact(<span class="hljs-number">1</span>) <span class="hljs-keyword">is</span> <span class="hljs-number">1</span>
+  fact(<span class="hljs-number">5</span>) <span class="hljs-keyword">is</span> <span class="hljs-number">120</span>
+<span class="hljs-keyword">end</span>
+
+<span class="hljs-function"><span class="hljs-keyword">fun</span> <span class="hljs-title">map</span><span class="hljs-type">&lt;A, B&gt;</span><span class="hljs-params">(f :: <span class="hljs-type">(A -&gt; B</span>)</span>, <span class="hljs-title">lst</span> </span>:: List<span class="hljs-operator">&lt;</span>A<span class="hljs-operator">&gt;</span>) <span class="hljs-operator">-&gt;</span> List<span class="hljs-operator">&lt;</span>B<span class="hljs-operator">&gt;</span>:
+  doc: <span class="hljs-string">&quot;Map a function over a list&quot;</span>
+  <span class="hljs-keyword">cases</span>(List) lst:
+    | <span class="hljs-literal">empty</span> <span class="hljs-operator">=&gt;</span> <span class="hljs-literal">empty</span>
+    | link(fst, rst) <span class="hljs-operator">=&gt;</span> link(f(fst), map(f, rst))
+  <span class="hljs-keyword">end</span>
+<span class="hljs-keyword">end</span>
+
+lam1 <span class="hljs-operator">=</span> <span class="hljs-function"><span class="hljs-keyword">lam</span><span class="hljs-params">(x, y)</span></span>: x <span class="hljs-operator">+</span> y <span class="hljs-keyword">end</span>
+lam2 <span class="hljs-operator">=</span> <span class="hljs-function"><span class="hljs-keyword">lam</span><span class="hljs-type">&lt;A&gt;</span><span class="hljs-params">(x :: <span class="hljs-type">A</span>)</span> -&gt; <span class="hljs-type">A</span></span>: x <span class="hljs-keyword">end</span>
+
+f1 <span class="hljs-operator">=</span> <span class="hljs-function"><span class="hljs-keyword">lam</span><span class="hljs-params">(n)</span></span>: n <span class="hljs-operator">*</span> <span class="hljs-number">2</span> <span class="hljs-keyword">end</span>
+f2 <span class="hljs-operator">=</span> <span class="hljs-function"><span class="hljs-keyword">lam</span><span class="hljs-params">(x)</span></span>:
+  <span class="hljs-keyword">block</span>:
+    y <span class="hljs-operator">=</span> x <span class="hljs-operator">+</span> <span class="hljs-number">1</span>
+    y <span class="hljs-operator">*</span> <span class="hljs-number">2</span>
+  <span class="hljs-keyword">end</span>
+<span class="hljs-keyword">end</span>

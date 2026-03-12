@@ -1,0 +1,5 @@
+<span class="hljs-keyword">use</span> <span class="hljs-keyword">context</span> essentials2020
+<span class="hljs-keyword">include</span> string-dict
+<span class="hljs-keyword">import</span> lists <span class="hljs-keyword">as</span> L
+<span class="hljs-keyword">provide-types</span> <span class="hljs-operator">*</span>
+<span class="hljs-keyword">provide</span>: <span class="hljs-operator">*</span> <span class="hljs-keyword">end</span>

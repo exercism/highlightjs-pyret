@@ -1,0 +1,11 @@
+<span class="hljs-keyword">type</span> MyType <span class="hljs-operator">=</span> Number
+<span class="hljs-keyword">newtype</span> MyId <span class="hljs-keyword">as</span> Id
+
+<span class="hljs-keyword">type-let</span> A <span class="hljs-operator">=</span> Number:
+  a <span class="hljs-operator">::</span> A <span class="hljs-operator">=</span> <span class="hljs-number">5</span>
+  a <span class="hljs-operator">+</span> <span class="hljs-number">1</span>
+<span class="hljs-keyword">end</span>
+
+<span class="hljs-function"><span class="hljs-keyword">fun</span> <span class="hljs-title">extract</span><span class="hljs-type">&lt;A&gt;</span><span class="hljs-params">(x :: <span class="hljs-type">List&lt;A&gt;</span>)</span> -&gt; <span class="hljs-type">A</span></span>:
+  x.first
+<span class="hljs-keyword">end</span>

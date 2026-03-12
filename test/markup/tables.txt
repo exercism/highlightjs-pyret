@@ -1,0 +1,15 @@
+include tables
+
+my-table = table: name :: String, age :: Number, active :: Boolean
+  row: "Alice", 20, true
+  row: "Bob", 30, false
+end
+
+loaded = load-table: name, age
+  source: my-table
+  sanitize name: string-toupper
+end
+
+t = my-table.build-column("score", lam(r): r["age"] * 2 end)
+filtered = t.filter(lam(r): r["active"] == true end)
+sorted = filtered.order-by("age", true)

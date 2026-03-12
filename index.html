@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Uiua playground</title>
+    <title>Pyret playground</title>
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/styles/default.min.css"
@@ -12,43 +12,42 @@
   </head>
   <body>
     <pre style="white-space: pre-wrap">
-        <code class="language-uiua">
-# Numbers
-5 6e3 0 3.2 3/4 ¯2/¯4 ¯1.1 η π τ ∞
+        <code class="language-highlightjs">
+include string-dict
 
-# Characters
-@a @Z @  @\n @\s @\xae @\x1F @\u2665 @\u{1f600}
+data BinaryTree<A>:
+  | leaf
+  | node(value :: A, left :: BinaryTree<A>, right :: BinaryTree<A>)
+end
 
-# Arrays
-[] [1 2 3] 1_2_3 [1_2 3_4]
-{} {1 {2 3}}
+fun map-tree<A, B>(f :: (A -> B), tree :: BinaryTree<A>) -> BinaryTree<B>:
+  doc: "Map a function over a binary tree"
+  cases (BinaryTree) tree:
+    | leaf => leaf
+    | node(v, l, r) =>
+      node(f(v), map-tree(f, l), map-tree(f, r))
+  end
+where:
+  t = node(1, leaf, node(2, leaf, leaf))
+  map-tree(lam(x): x * 2 end, t) is node(2, leaf, node(4, leaf, leaf))
+end
 
-# Strings
-"Hello, world!"
-"Hello,\sworld!"
-"Hello, \"world\"!"
+#| 
+  A multi-line comment showing
+  a reactor definition 
+|#
 
-$"Hello _ !" "World"
-$ Hello _ !
-$$ Hello _ !
-
-# Identifiers
-Name Age__1 X y
-
-# Functions
-Cube ← ××..
-Cube = (××..)
-TimesThree ← |1.1 ×3
-TimesThree ← |1 ×3
-
-# Glyphs
-◠ ⌵ + ⌝ ’ ⍤ ∠ ˜ ◡ ⋯ ∩ □ ⊓ ⊸ ⍩ ⌈ ⑄ ⊛ ℂ ◇ ⊟ ◴ ∂ ♭ ⊙ ÷ ⍢ ↘ . ∵ = ⍖ ⬚ ⌕ ⊢ ¤ : ⌊ ∧ ⊃ ⋅ ≥ &gt; ⊕ ∘ ⊗ ∫ ⍚ ⊂ ▽ ⊣ ⧻ ≤ &lt; ₙ ⦷ ≍ ↥ ∊ ∈ ↧ ◿ × ¯ ¬ ≠ ⌅ ⤚ ⟜ ⤸  ⋕ ⊜ ⊡ ◌ ⁿ ⚂ ⇡ / ⍥ ☇ ↯ ⇌ ⍏ ↻ ⁅ ≡ \\ ⊏ △ ± ∿ ⍆ √ ? - ⨬ ⊞ ↙ ⸮ ⍉ ◹ ⍣ ⧅ ° ⍜ ◰ ⊚ ◫ ⤙
+my-reactor = reactor:
+  init: 0,
+  on-tick: lam(state): state + 1 end,
+  title: "Counter"
+end
         </code>
 
     </pre>
     <script type="module">
-      import hljsDefineUiua from "./src/uiua.ts";
-      hljs.registerLanguage("uiua", hljsDefineUiua);
+      import hljsDefinePyret from "./src/pyret.ts";
+      hljs.registerLanguage("pyret", hljsDefinePyret);
       hljs.highlightAll();
     </script>
   </body>

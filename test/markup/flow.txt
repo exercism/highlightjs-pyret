@@ -1,0 +1,25 @@
+import lists as L
+
+fun foo(n):
+  ask:
+    | n < 0 then: "negative"
+    | n == 0 then: "zero"
+    | otherwise: "positive"
+  end
+end
+
+for L.fold(acc from 0, elt from [list: 1, 2, 3]):
+  acc + elt
+end
+
+try:
+  1 / 0
+except(e):
+  print(e)
+end
+
+block:
+  var x = 1
+  x := x + 1
+  x
+end

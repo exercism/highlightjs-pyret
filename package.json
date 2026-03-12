@@ -1,15 +1,15 @@
 {
-  "name": "@exercism/highlightjs-uiua",
-  "module": "src/uiua.ts",
-  "main": "src/uiua.js",
-  "types": "src/uiua.d.ts",
+  "name": "@exercism/highlightjs-pyret",
+  "module": "src/pyret.ts",
+  "main": "src/pyret.js",
+  "types": "src/pyret.d.ts",
   "type": "module",
-  "version": "0.0.4",
+  "version": "0.0.2",
   "author": {
-    "name": "Erik Schierboom"
+    "name": "András B Nagy"
   },
   "scripts": {
-    "prepublishOnly": "bun build --minify src/uiua.ts --outdir src",
+    "prepublishOnly": "bun build --minify src/pyret.ts --outdir src",
     "test": "bun test",
     "dev": "vite"
   },

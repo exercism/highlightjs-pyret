@@ -1,0 +1,15 @@
+<span class="hljs-class"><span class="hljs-keyword">data</span> <span class="hljs-title">Point</span></span>:
+  | point(x <span class="hljs-operator">::</span> Number, y <span class="hljs-operator">::</span> Number) <span class="hljs-keyword">with</span>:
+    <span class="hljs-function"><span class="hljs-keyword">method</span> <span class="hljs-title">distance</span><span class="hljs-params">(self, other :: <span class="hljs-type">Point</span>)</span> -&gt; <span class="hljs-type">Number</span></span>:
+      num-sqrt(num-sqr(self.x <span class="hljs-operator">-</span> other.x) <span class="hljs-operator">+</span> num-sqr(self.y <span class="hljs-operator">-</span> other.y))
+    <span class="hljs-keyword">end</span>
+<span class="hljs-keyword">sharing</span>:
+  <span class="hljs-function"><span class="hljs-keyword">method</span> <span class="hljs-title">is-origin</span><span class="hljs-params">(self)</span> -&gt; <span class="hljs-type">Boolean</span></span>:
+    (self.x <span class="hljs-operator">==</span> <span class="hljs-number">0</span>) <span class="hljs-keyword">and</span> (self.y <span class="hljs-operator">==</span> <span class="hljs-number">0</span>)
+  <span class="hljs-keyword">end</span>
+<span class="hljs-keyword">end</span>
+
+my-obj <span class="hljs-operator">=</span> {
+  <span class="hljs-function"><span class="hljs-keyword">method</span> <span class="hljs-title">m1</span><span class="hljs-params">(self)</span></span>: self.field <span class="hljs-keyword">end</span>,
+  field: <span class="hljs-number">123</span>
+}

@@ -1,0 +1,7 @@
+<span class="hljs-comment"># Special case where operators must be space-separated</span>
+<span class="hljs-comment"># Without spaces, hyphens form an identifier instead.</span>
+valid-identifier <span class="hljs-operator">=</span> <span class="hljs-number">1</span> <span class="hljs-operator">-</span> <span class="hljs-number">2</span>
+another-identifier <span class="hljs-operator">=</span> valid-identifier
+
+a-b <span class="hljs-operator">=</span> <span class="hljs-number">3</span>
+c <span class="hljs-operator">=</span> a-b <span class="hljs-operator">-</span> <span class="hljs-number">1</span>

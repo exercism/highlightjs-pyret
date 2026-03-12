@@ -1,0 +1,11 @@
+type MyType = Number
+newtype MyId as Id
+
+type-let A = Number:
+  a :: A = 5
+  a + 1
+end
+
+fun extract<A>(x :: List<A>) -> A:
+  x.first
+end

@@ -1,0 +1,11 @@
+<span class="hljs-keyword">check</span> <span class="hljs-string">&quot;test suite&quot;</span>:
+  <span class="hljs-number">1</span> <span class="hljs-operator">+</span> <span class="hljs-number">1</span> <span class="hljs-keyword">is</span> <span class="hljs-number">2</span>
+  <span class="hljs-number">2</span> <span class="hljs-operator">*</span> <span class="hljs-number">2</span> <span class="hljs-keyword">is</span><span class="hljs-operator">==</span> <span class="hljs-number">4</span>
+  <span class="hljs-number">3</span> <span class="hljs-operator">/</span> <span class="hljs-number">2</span> <span class="hljs-keyword">is</span><span class="hljs-operator">=</span>~ <span class="hljs-number">1.5</span>
+  
+  <span class="hljs-function"><span class="hljs-keyword">fun</span> <span class="hljs-title">throw-err</span><span class="hljs-params">()</span></span>: raise(<span class="hljs-string">&quot;err&quot;</span>) <span class="hljs-keyword">end</span>
+  throw-err() <span class="hljs-keyword">raises</span> <span class="hljs-string">&quot;err&quot;</span>
+  
+  [<span class="hljs-built_in">list</span>: <span class="hljs-number">1</span>, <span class="hljs-number">2</span>] <span class="hljs-keyword">satisfies</span> <span class="hljs-function"><span class="hljs-keyword">lam</span><span class="hljs-params">(l)</span></span>: l.length() <span class="hljs-operator">==</span> <span class="hljs-number">2</span> <span class="hljs-keyword">end</span>
+  [<span class="hljs-built_in">list</span>: <span class="hljs-number">1</span>] <span class="hljs-keyword">violates</span> <span class="hljs-function"><span class="hljs-keyword">lam</span><span class="hljs-params">(l)</span></span>: l.length() <span class="hljs-operator">==</span> <span class="hljs-number">2</span> <span class="hljs-keyword">end</span>
+<span class="hljs-keyword">end</span>

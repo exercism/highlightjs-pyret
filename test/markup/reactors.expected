@@ -1,0 +1,11 @@
+<span class="hljs-keyword">reactor</span>:
+  <span class="hljs-keyword">init</span>: <span class="hljs-number">0</span>,
+  <span class="hljs-keyword">on-tick</span>: <span class="hljs-function"><span class="hljs-keyword">lam</span><span class="hljs-params">(state)</span></span>: state <span class="hljs-operator">+</span> <span class="hljs-number">1</span> <span class="hljs-keyword">end</span>,
+  <span class="hljs-keyword">on-mouse</span>: <span class="hljs-function"><span class="hljs-keyword">lam</span><span class="hljs-params">(state, x, y, ev)</span></span>: state <span class="hljs-keyword">end</span>,
+  <span class="hljs-keyword">on-key</span>: <span class="hljs-function"><span class="hljs-keyword">lam</span><span class="hljs-params">(state, key)</span></span>: state <span class="hljs-keyword">end</span>,
+  <span class="hljs-keyword">to-draw</span>: <span class="hljs-function"><span class="hljs-keyword">lam</span><span class="hljs-params">(state)</span></span>: circle(state, <span class="hljs-string">&quot;solid&quot;</span>, <span class="hljs-string">&quot;red&quot;</span>) <span class="hljs-keyword">end</span>,
+  <span class="hljs-keyword">stop-when</span>: <span class="hljs-function"><span class="hljs-keyword">lam</span><span class="hljs-params">(state)</span></span>: state <span class="hljs-operator">&gt;</span> <span class="hljs-number">10</span> <span class="hljs-keyword">end</span>,
+  <span class="hljs-keyword">title</span>: <span class="hljs-string">&quot;My Reactor&quot;</span>,
+  <span class="hljs-keyword">close-when-stop</span>: <span class="hljs-literal">true</span>,
+  <span class="hljs-keyword">seconds-per-tick</span>: <span class="hljs-number">0.1</span>
+<span class="hljs-keyword">end</span>

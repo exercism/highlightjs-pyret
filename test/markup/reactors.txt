@@ -1,0 +1,11 @@
+reactor:
+  init: 0,
+  on-tick: lam(state): state + 1 end,
+  on-mouse: lam(state, x, y, ev): state end,
+  on-key: lam(state, key): state end,
+  to-draw: lam(state): circle(state, "solid", "red") end,
+  stop-when: lam(state): state > 10 end,
+  title: "My Reactor",
+  close-when-stop: true,
+  seconds-per-tick: 0.1
+end
